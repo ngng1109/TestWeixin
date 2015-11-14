@@ -85,9 +85,9 @@
         <div class="switrgbhow">
             <table width="100%">
                 <tr align="center" height="114px">
-                    <td valign="middle"><img id="switchbtn" src="./image/03-turn-on.svg" alt=""><br/><span id="switchspan">开</span></td>
+                    <td valign="middle"><img id="switchbtn" src="./image/03-turn-on.svg" alt=""><br/><span id="switchspan">系统开</span></td>
                     <!-- <td valign="middle"><hr class="hrline" size="80" /></td> -->
-                    <td valign="middle"><img id="rgbimgid" src="./image/02-red.svg" alt=""><br/><span>温度阀值</span></td>
+                    <td valign="middle"><img id="rgbimgid" src="./image/02-red.svg" alt=""><br/><span>LED状态</span></td>
                 </tr>                
             </table>
         </div>
@@ -176,9 +176,9 @@
             // console.log('温度2 ' +  tempval);
             if("undefined" != typeof(tempval)){
                 // 显示温度
-                $("#tempid").text(tempval+"℃");
+                $("#tempid").text(tempval+"mm");
                 // 显示湿度
-                $("#humiid").text(msgjson.dht11_humidity+'%');
+                $("#humiid").text(msgjson.dht11_humidity+'mm');
                 // 温度超过29则红灯亮，20-29之间则绿灯亮，低于20黄灯亮
                 if(tempval > "29"){
                     led_red();
@@ -201,11 +201,11 @@
             if("./image/03-turn-on.svg" == swtimg){
                 commond = '{"device_switch":false}';
                 $("#switchbtn").attr("src", "./image/03-turn-off.svg");
-                $("#switchspan").text("关");
+                $("#switchspan").text("系统关");
             }else{
                 commond = '{"device_switch":true}';
                 $("#switchbtn").attr("src", "./image/03-turn-on.svg");
-                $("#switchspan").text("开");
+                $("#switchspan").text("系统开");
             }
             client.publish(topic, commond);
         });
