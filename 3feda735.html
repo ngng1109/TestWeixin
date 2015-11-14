@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-    <title>E21状态监测</title>
+    <title>ESTUN状态监测</title>
     <style>
         *{margin:0px;padding:0px;}
         body{
@@ -24,12 +24,22 @@
             box-shadow: 3px 3px 3px #e1e1e1;
         }
         .title span{
-            color: #000000;
-            /*color: #229B32;*/
-            font-size: 18px;
-            /*font-weight: bolder;*/
-            position: relative;
+	color: #000000;
+	/*color: #229B32;*/
+	font-size: 20px;
+	/*font-weight: bolder;*/
+	position: relative;
         }
+		.end span
+		{
+			color: #663366;
+			font-family: 楷体;
+			/*color: #229B32;*/
+			font-size: 12px;
+			/*font-weight: bolder;*/
+			text-align:right;
+			position: relative;
+		}
         .temphumishow{
             margin: 5px 12px;
             height: 94px;
@@ -73,8 +83,9 @@
 </head>
 <body>
     <div class="content">
+           
         <div class="title">
-          <span>折弯机实时监控</span>
+          <span>ESTUN 折弯机实时监控</span>
         </div>        
         <div class="temphumishow">
             <table width="100%" height="94px">
@@ -113,6 +124,10 @@
                 </tr>                
             </table>
         </div>
+        
+         <div class="end">
+          <span> 制作 by 多文@ng</span>
+        </div> 
         <!-- <div class="humihis">
             <div id="device_id"></div>
             <div id="debug"></div>
