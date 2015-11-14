@@ -48,6 +48,10 @@
             font-size: 30px;
             color: #80a72d; 
         }
+		.Poscls{
+	        font-size: 20px;
+	        color: #CC0000;
+        }
         .switrgbhow{
             margin: 5px 12px;
             height: 114px;
@@ -76,9 +80,9 @@
             <table width="100%" height="94px">
                 <tr align="center">
                     <td valign="middle" align="right"><img src="./image/01-position.svg" alt=""></td>
-                    <td valign="middle" align="left">&nbsp;&nbsp;<span>X轴位置(mm)</span><br/>&nbsp;&nbsp;<span class="tempcls" id="PositionXid">200.12</span></td>
+                    <td valign="middle" align="left">&nbsp;&nbsp;<span>X轴位置(mm)</span><br/>&nbsp;&nbsp;<span class="Poscls" id="PositionXid">200.12</span></td>
                     <td valign="middle" align="right"><img src="./image/01-position.svg" alt=""></td>
-                    <td valign="middle" align="left">&nbsp;&nbsp;<span>Y轴位置(mm)</span><br/>&nbsp;&nbsp;<span class="humicls" id="PositionYid">420.00</span></td>
+                    <td valign="middle" align="left">&nbsp;&nbsp;<span>Y轴位置(mm)</span><br/>&nbsp;&nbsp;<span class="Poscls" id="PositionYid">420.00</span></td>
                 </tr>
             </table>
         </div>  
@@ -190,9 +194,9 @@
                 // 显示湿度
                 $("#humiid").text(msgjson.dht11_humidity);
 				//显示X轴位置
-				$("#PositionXid").text(msgjson.PositionX);
+				$("#PositionXid").text((msgjson.PositionX)/1000);
 				//显示Y轴位置
-				$("#PositionYid").text(msgjson.PositionY);
+				$("#PositionYid").text((msgjson.PositionY)/1000);
                 // 温度超过29则红灯亮，20-29之间则绿灯亮，低于20黄灯亮
                 if(tempval > "29"){
                     led_red();
